@@ -28,8 +28,7 @@
     .logo{font-size:1.6rem;font-weight:700;color:#fff;}
     .nav-links{display:flex;gap:1.25rem;}
     .nav-links a{color:#fff;font-weight:400;}
-    .hero{height:calc(100vh - 120px);display:grid;place-items:center;text-align:center;background:url('images/hero-bg.jpg') center/cover no-repeat;position:relative;isolation:isolate;}
-    .hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);z-index:-1;}
+    .hero{height:auto;min-height:calc(100vh - 120px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background-color:#4b5563;padding:4rem 1rem;}
     .hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.2;color:#fff;margin-bottom:1rem;}
     .hero p{color:#e0f2f1;max-width:640px;margin-inline:auto;margin-bottom:2.5rem;}
     .highlight{position:relative;}
@@ -61,7 +60,7 @@
   </header>
   <section class="hero">
     <div class="container">
-      <img src="asset/forest-4185387.jpg" alt="EviLawLink Intro Image" style="max-width: 400px; margin-inline: auto; margin-bottom: 2rem; border-radius: 1rem;">
+      <img src="asset/forest-4185387.jpg" alt="ภาพป่าและหมอก" style="max-width: 500px; margin-inline: auto; margin-bottom: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
       <h1><span class="highlight">EviLawLink</span> ลดฝุ่น PM 2.5 ไม่ลดสิทธิของคุณ</h1>
       <p>แอปพลิเคชันที่เชื่อมข้อมูลสิ่งแวดล้อมกับกฎหมาย ให้ประชาชนมีส่วนร่วมแก้ปัญหาอากาศสะอาดอย่างมีพลัง</p>
       <a href="#download" class="btn">ดาวน์โหลดเวอร์ชันต้นแบบ</a>
