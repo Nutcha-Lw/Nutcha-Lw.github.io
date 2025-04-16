@@ -139,9 +139,17 @@
 
     .hero h1 {
       font-size: clamp(2.2rem, 6vw, 4rem);
-      line-height: 1.2;
+      line-height: 1.25;
       color: #fff;
-      margin-bottom: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    /* brand text styling */
+    .brand {
+      color: var(--green);
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     }
 
     .hero p {
@@ -151,23 +159,7 @@
       margin-bottom: 2.5rem;
     }
 
-    .highlight {
-      position: relative;
-    }
-
-    .highlight::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0.15em;
-      width: 100%;
-      height: 0.32em;
-      background: var(--accent);
-      z-index: -1;
-      border-radius: 0.2em;
-    }
-
-    /* ---------------- Sections ---------------- */
+    /* ---------------- Sections & cards etc remain same ---------------- */
     section {
       padding-block: 6rem;
     }
@@ -189,7 +181,6 @@
       color: #94a3b8;
     }
 
-    /* ---------------- Feature Cards ---------------- */
     .feature {
       background: #fff;
       border-radius: 1rem;
@@ -218,7 +209,6 @@
       margin-bottom: 1rem;
     }
 
-    /* ---------------- Video Wrapper ---------------- */
     .video-wrapper {
       position: relative;
       padding-bottom: 56.25%;
@@ -238,7 +228,6 @@
       border: 0;
     }
 
-    /* ---------------- Footer ---------------- */
     footer {
       background: var(--green-dark);
       color: #fff;
@@ -269,7 +258,7 @@
   <!-- ---------- Hero ---------- -->
   <section class="hero">
     <div class="content">
-      <h1><span class="highlight">EviLawLink</span> ลดฝุ่น PM 2.5 ไม่ลดสิทธิของคุณ</h1>
+      <h1><span class="brand">EviLawLink</span> ลดฝุ่น PM 2.5 ไม่ลดสิทธิของคุณ</h1>
       <p>แอปพลิเคชันที่เชื่อมข้อมูลสิ่งแวดล้อมกับกฎหมาย ให้ประชาชนมีส่วนร่วมแก้ปัญหาอากาศสะอาดอย่างมีพลัง</p>
       <a href="#download" class="btn">ดาวน์โหลดเวอร์ชันต้นแบบ</a>
     </div>
