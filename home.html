@@ -13,235 +13,42 @@
       --stone: #475569;
       --accent: var(--green);
     }
-
-    /* ---------------- Reset & Base ---------------- */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Poppins", sans-serif;
-      line-height: 1.6;
-      color: var(--stone);
-    }
-
-    body {
-      background: var(--sand);
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 0.75rem;
-    }
-
-    .container {
-      width: min(1200px, 90%);
-      margin-inline: auto;
-      padding-block: 4rem;
-    }
-
-    .grid {
-      display: grid;
-      gap: 2rem;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--green-dark);
-      color: #fff;
-      padding: 0.75rem 2rem;
-      border-radius: 9999px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-    }
-
-    .btn:hover {
-      background: var(--green);
-      color: #fff;
-    }
-
-    /* ---------------- Header & Navigation ---------------- */
-    header {
-      background-color: var(--green-dark);
-      position: relative;
-      z-index: 10;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 0;
-      max-width: 1200px;
-      margin-inline: auto;
-    }
-
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding: 0.5rem 1rem;
-      font-weight: 500;
-      color: #ffffffcc;
-      border-radius: 9999px;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus {
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
-    }
-
-    /* ---------------- Hero ---------------- */
-    .hero {
-      min-height: calc(100vh - 120px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: url("asset/forest-4185387.jpg") center/cover fixed no-repeat;
-      position: relative;
-      padding: 4rem 1rem;
-      isolation: isolate; /* for overlay */
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      z-index: -1;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      line-height: 1.25;
-      color: #fff;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-    }
-
-    /* brand text styling */
-    .brand {
-      color: var(--green);
-      font-weight: 700;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    }
-
-    .hero p {
-      color: #e0f2f1;
-      max-width: 640px;
-      margin-inline: auto;
-      margin-bottom: 2.5rem;
-    }
-
-    /* ---------------- Sections & cards etc remain same ---------------- */
-    section {
-      padding-block: 6rem;
-    }
-
-    section h2 {
-      font-size: 2.2rem;
-      color: var(--green-dark);
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .img-box {
-      background: #e2e8f0;
-      border: 3px dashed #cbd5e0;
-      height: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #94a3b8;
-    }
-
-    .feature {
-      background: #fff;
-      border-radius: 1rem;
-      padding: 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      transition: transform 0.25s, box-shadow 0.25s;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .feature:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .feature-img {
-      margin-bottom: 1.25rem;
-      border-radius: 0.75rem;
-      overflow: hidden;
-    }
-
-    .feature-icon {
-      font-size: 2.2rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    .video-wrapper iframe,
-    .video-wrapper video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    footer {
-      background: var(--green-dark);
-      color: #fff;
-      text-align: center;
-      padding: 2.5rem 0;
-    }
-
-    footer small {
-      opacity: 0.85;
-    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif;line-height:1.6;color:var(--stone);} 
+    body{background:var(--sand);overflow-x:hidden;}
+    a{text-decoration:none;transition:all .25s ease;}
+    a:hover{opacity:.85;}
+    img{width:100%;height:auto;border-radius:.75rem;}
+    .container{width:min(1200px,90%);margin-inline:auto;padding-block:4rem;}
+    .grid{display:grid;gap:2rem;}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+    .btn{display:inline-block;background:var(--green-dark);color:#fff;padding:.75rem 2rem;border-radius:9999px;font-weight:600;letter-spacing:.3px;}
+    .btn:hover{background:var(--green);color:#fff;}
+    header{background:var(--green-dark);}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;max-width:1200px;margin-inline:auto;}
+    .logo{font-size:1.6rem;font-weight:700;color:#fff;}
+    .nav-links{display:flex;gap:1rem;}
+    .nav-links a{padding:.5rem 1rem;color:#ffffffcc;border-radius:9999px;}
+    .nav-links a:hover{background:rgba(255,255,255,.15);color:#fff;}
+    .hero{min-height:calc(100vh - 120px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:url('asset/forest-4185387.jpg') center/cover fixed no-repeat;position:relative;padding:4rem 1rem;isolation:isolate;}
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);z-index:-1;}
+    .hero h1{font-size:clamp(2.2rem,6vw,4rem);color:#fff;margin-bottom:1.25rem;font-weight:600;line-height:1.25;}
+    .brand{color:var(--green);font-weight:700;text-shadow:0 2px 4px rgba(0,0,0,.15);}
+    .hero p{color:#e0f2f1;max-width:640px;margin-inline:auto;margin-bottom:2.5rem;}
+    section{padding-block:6rem;}
+    section h2{font-size:2.2rem;color:var(--green-dark);margin-bottom:1rem;text-align:center;}
+    .problem-list,.solution-list{margin-block:1rem 1.5rem;padding-left:1.2rem;}
+    .problem-list li,.solution-list li{margin-bottom:.5rem;}
+    .feature{background:#fff;border-radius:1rem;padding:2rem;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:transform .25s,box-shadow .25s;cursor:pointer;display:flex;flex-direction:column;}
+    .feature:hover{transform:translateY(-6px);box-shadow:0 6px 20px rgba(0,0,0,.1);} 
+    .feature-img{margin-bottom:1.25rem;border-radius:.75rem;overflow:hidden;}
+    .feature-icon{font-size:2.2rem;color:var(--accent);margin-bottom:1rem;}
+    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.08);} 
+    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+    footer{background:var(--green-dark);color:#fff;text-align:center;padding:2.5rem 0;}footer small{opacity:.85;}
   </style>
 </head>
 <body>
-  <!-- ---------- Header ---------- -->
   <header id="top">
     <nav>
       <span class="logo">EviLawLink</span>
@@ -255,7 +62,6 @@
     </nav>
   </header>
 
-  <!-- ---------- Hero ---------- -->
   <section class="hero">
     <div class="content">
       <h1><span class="brand">EviLawLink</span> ลดฝุ่น PM 2.5 ไม่ลดสิทธิของคุณ</h1>
@@ -264,16 +70,28 @@
     </div>
   </section>
 
-  <!-- ---------- Problem ---------- -->
+  <!-- ---------- Problem (updated) ---------- -->
   <section id="problem">
     <div class="container grid grid-2">
       <div>
         <h2>ปัญหาที่เราแก้ไข</h2>
-        <p>ประเทศไทยเผชิญวิกฤตฝุ่นละออง <strong>PM 2.5</strong> ต่อเนื่อง ส่งผลต่อสุขภาพและเศรษฐกิจ สาเหตุหลักมาจากการคมนาคม การเผาในที่โล่ง และอุตสาหกรรม กฎหมายปัจจุบันยังบังคับใช้ได้ไม่เต็มที่ ประชาชนขาดช่องทางร้องเรียน</p>
-        <p>EviLawLink จึงเป็นสะพานข้อมูล สิทธิ และการมีส่วนร่วมของประชาชน ในการผลักดัน <em>พ.ร.บ.อากาศสะอาด</em></p>
+        <p><strong>เราอยู่กับฝุ่น PM 2.5 ทุกวัน</strong> ส่งผลกระทบครอบจักรวาล—ตั้งแต่โรคทางเดินหายใจ ไปจนถึงคุณภาพชีวิตและสุขภาพจิต</p>
+        <ul class="problem-list">
+          <li><strong>สุขภาพ :</strong> หายใจลำบาก เสี่ยงโรคเรื้อรัง</li>
+          <li><strong>ชีวิตประจำวัน :</strong> กิจกรรมนอกบ้าน &amp; การเดินทางติดขัด</li>
+          <li><strong>จิตใจ :</strong> ความเครียด ความกังวลเรื่องอากาศไม่ปลอดภัย</li>
+        </ul>
+        <p><strong>กฎหมายปัจจุบันยังไม่ครอบคลุม</strong> การบังคับใช้กระจัดกระจาย &amp; ช่องทางร้องเรียนซับซ้อน</p>
+        <p><strong>EnviLawLink</strong> จึงสร้างเครื่องมือดิจิทัลที่ <em>ให้ข้อมูล—ให้สิทธิ—ให้ส่วนร่วม</em></p>
+        <ul class="solution-list">
+          <li>สรุปสิทธิด้านสิ่งแวดล้อม &amp; กฎหมายที่เข้าใจง่าย</li>
+          <li>แผนที่ฝุ่น PM 2.5 และจุดเผาไหม้แบบเรียลไทม์</li>
+          <li>ระบบ <strong>ร้องเรียน &amp; ติดตามผล</strong> ในแอปเดียว</li>
+          <li>ลงชื่อสนับสนุน <strong>ร่าง พ.ร.บ.อากาศสะอาด</strong> — ผลักดันการแก้ปัญหาถึงรัฐสภา</li>
+        </ul>
       </div>
       <div class="feature-img">
-      <img src="asset/pm25-kualalumpur-1000x667.jpg" alt="อินโฟกราฟิกปัญหาฝุ่น PM2.5">
+        <img src="images/pm25-infographic.png" alt="อินโฟกราฟิกปัญหาฝุ่น PM2.5">
       </div>
     </div>
   </section>
@@ -286,7 +104,7 @@
         <div class="feature">
           <div class="feature-img"><img src="images/feature-rights.jpg" alt="สิทธิและกฎหมาย"></div>
           <div class="feature-icon">📚</div>
-          <h3>สิทธิ & กฎหมาย</h3>
+          <h3>สิทธิ &amp; กฎหมาย</h3>
           <p>สรุปกฎหมายและสิทธิด้านสิ่งแวดล้อมด้วยภาษาง่าย ๆ พร้อมแนวทางปกป้องสิทธิของตัวเอง</p>
         </div>
         <div class="feature">
@@ -298,7 +116,7 @@
         <div class="feature">
           <div class="feature-img"><img src="images/feature-complaint.jpg" alt="ร้องเรียนและติดตาม"></div>
           <div class="feature-icon">📝</div>
-          <h3>ร้องเรียน & ติดตาม</h3>
+          <h3>ร้องเรียน &amp; ติดตาม</h3>
           <p>แจ้งปัญหา ร้องเรียน และติดตามสถานะการดำเนินการได้ในที่เดียว</p>
         </div>
         <div class="feature">
@@ -326,11 +144,11 @@
     <div class="container grid grid-2">
       <div class="img-box">ใส่ภาพ Mockup แอป</div>
       <div>
-        <h2>กฎหมายมีชีวิต & Tech for Good</h2>
+        <h2>กฎหมายมีชีวิต &amp; Tech for Good</h2>
         <p><strong>“กฎหมายคือเครื่องมือ”</strong> สร้างการเปลี่ยนแปลงผ่านเทคโนโลยี<br>
            <strong>“กฎหมายขึ้นอยู่กับวัฒนธรรมพื้นที่”</strong> เนื้อหาปรับให้เข้าใจง่าย เหมาะกับบริบทไทย<br>
            <strong>“กฎหมายที่มีชีวิต”</strong> เปิดพื้นที่ให้ประชาชนเป็นเจ้าของกฎหมาย</p>
-        <p>EviLawLink ผสาน Open Data สิ่งแวดล้อมกับหลักสังคมวิทยากฎหมาย ร่วมสร้างชุมชนคนรักอากาศสะอาด</p>
+        <p>EnviLawLink ผสาน Open Data สิ่งแวดล้อมกับหลักสังคมวิทยากฎหมาย ร่วมสร้างชุมชนคนรักอากาศสะอาด</p>
       </div>
     </div>
   </section>
