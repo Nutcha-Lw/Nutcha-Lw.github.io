@@ -5,47 +5,176 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EnviLawLink | นวัตกรรมเพื่ออากาศสะอาด</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
   <style>
-    :root { --green-dark:#2f855a; --green:#4ade80; --sand:#f7fafc; --stone:#475569; --accent:var(--green);} 
-    *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif;line-height:1.6;color:var(--stone);} body{background:var(--sand);overflow-x:hidden;} a{text-decoration:none;transition:all .25s;}a:hover{opacity:.85;} img{width:100%;height:auto;border-radius:.75rem;}
+    :root {
+      --green-dark:#2f855a;
+      --green:#4ade80;
+      --sand:#f7fafc;
+      --stone:#475569;
+      --accent:var(--green);
+    }
+
+    /* ---------- Base ---------- */
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif;line-height:1.6;color:var(--stone);}
+    body{background:var(--sand);overflow-x:hidden;}
+    a{text-decoration:none;transition:all .25s ease;}
+    a:hover{opacity:.85;}
+    img{width:100%;height:auto;border-radius:.75rem;}
     .container{width:min(1200px,90%);margin-inline:auto;padding-block:4rem;}
-    .grid{display:grid;gap:2rem;} .grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));} .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
-    .btn{display:inline-block;background:var(--green-dark);color:#fff;padding:.75rem 2rem;border-radius:9999px;font-weight:600;letter-spacing:.3px;} .btn:hover{background:var(--green);}
-    header{background:var(--green-dark);} nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;max-width:1200px;margin-inline:auto;}
-    .logo{font-size:1.6rem;font-weight:700;color:#fff;} .nav-links{display:flex;gap:1rem;} .nav-links a{padding:.5rem 1rem;color:#ffffffcc;border-radius:9999px;} .nav-links a:hover{background:rgba(255,255,255,.15);color:#fff;}
-    .hero{min-height:calc(100vh - 120px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:url('asset/forest-4185387.jpg') center/cover fixed no-repeat;position:relative;padding:4rem 1rem;isolation:isolate;}
+    .grid{display:grid;gap:2rem;}
+    .grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
+    .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+
+    /* ---------- Buttons ---------- */
+    .btn{display:inline-block;background:var(--green-dark);color:#fff;padding:.75rem 2rem;border-radius:9999px;font-weight:600;letter-spacing:.3px;}
+    .btn:hover{background:var(--green);}
+
+    /* ---------- Header ---------- */
+    header{background:var(--green-dark);}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;max-width:1200px;margin-inline:auto;}
+    .logo{font-size:1.6rem;font-weight:700;color:#fff;}
+    .nav-links{display:flex;gap:1rem;}
+    .nav-links a{padding:.5rem 1rem;color:#ffffffcc;border-radius:9999px;}
+    .nav-links a:hover{background:rgba(255,255,255,.15);color:#fff;}
+
+    /* ---------- Hero ---------- */
+    .hero{
+      min-height:calc(100vh - 120px);
+      display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+      background:url('asset/forest-4185387.jpg') center/cover fixed no-repeat;
+      position:relative;padding:4rem 1rem;isolation:isolate;
+    }
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);z-index:-1;}
     .hero h1{font-size:clamp(2.2rem,6vw,4rem);color:#fff;margin-bottom:1.25rem;font-weight:600;line-height:1.25;}
-    .brand{color:var(--green);font-weight:700;text-shadow:0 2px 4px rgba(0,0,0,.15);} .hero p{color:#e0f2f1;max-width:640px;margin-inline:auto;margin-bottom:2.5rem;}
-    section{padding-block:6rem;} section h2{font-size:2.2rem;color:var(--green-dark);margin-bottom:1rem;text-align:center;}
-    .feature{background:#fff;border-radius:1rem;padding:2rem;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:transform .25s,box-shadow .25s;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-align:center;}
-    .feature:hover{transform:translateY(-6px);box-shadow:0 6px 20px rgba(0,0,0,.1);} .feature-img{margin-bottom:1.25rem;border-radius:.75rem;overflow:hidden;width:100%;}
-    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.08);} .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
-    footer{background:var(--green-dark);color:#fff;text-align:center;padding:2.5rem 0;} footer small{opacity:.85;}
+    .brand{color:var(--green);font-weight:700;text-shadow:0 2px 4px rgba(0,0,0,.15);}
+    .hero p{color:#e0f2f1;max-width:640px;margin-inline:auto;margin-bottom:2.5rem;}
 
-    /* --- Fade‑up animation --- */
+    /* ---------- Sections ---------- */
+    section{padding-block:6rem;}
+    section h2{font-size:2.2rem;color:var(--green-dark);margin-bottom:1rem;text-align:center;}
+
+    /* ---------- Lists ---------- */
+    .problem-list,.solution-list{margin-block:1rem 1.5rem;padding-left:1.2rem;}
+    .problem-list li,.solution-list li{margin-bottom:.5rem;}
+
+    /* ---------- Feature Cards ---------- */
+    .feature{
+      background:#fff;border-radius:1rem;padding:2rem;
+      box-shadow:0 4px 12px rgba(0,0,0,.05);
+      transition:transform .25s,box-shadow .25s;cursor:pointer;
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+    }
+    .feature:hover{transform:translateY(-6px);box-shadow:0 6px 20px rgba(0,0,0,.1);}
+    .feature-img{margin-bottom:1.25rem;border-radius:.75rem;overflow:hidden;width:100%;}
+
+    /* ---------- Video ---------- */
+    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.08);}
+    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+
+    /* ---------- Footer ---------- */
+    footer{background:var(--green-dark);color:#fff;text-align:center;padding:2.5rem 0;}
+    footer small{opacity:.85;}
+
+    /* ---------- Fade‑up Animation ---------- */
     .fade-up{opacity:0;transform:translateY(40px);transition:opacity .8s ease-out,transform .8s ease-out;}
     .fade-up.in-view{opacity:1;transform:translateY(0);}
   </style>
 </head>
 <body>
-  <header id="top"><nav><span class="logo">EnviLawLink</span><div class="nav-links"><a href="#problem">ปัญหา</a><a href="#features">ฟีเจอร์</a><a href="#video">วิดีโอ</a><a href="#impact">แนวคิด</a><a href="#download" class="btn">ทดลองใช้</a></div></nav></header>
 
-  <section class="hero"><div class="content fade-up"><h1><span class="brand">EnviLawLink</span> ลดฝุ่น PM 2.5 ไม่ลดสิทธิของคุณ</h1><p>แอปพลิเคชันที่เชื่อมข้อมูลสิ่งแวดล้อมกับกฎหมาย ให้ประชาชนมีส่วนร่วมแก้ปัญหาอากาศสะอาดอย่างมีพลัง</p><a href="#download" class="btn">ดาวน์โหลดเวอร์ชันต้นแบบ</a></div></section>
+  <!-- Header -->
+  <header id="top">
+    <nav>
+      <span class="logo">EnviLawLink</span>
+      <div class="nav-links">
+        <a href="#problem">ปัญหา</a>
+        <a href="#features">ฟีเจอร์</a>
+        <a href="#video">วิดีโอ</a>
+        <a href="#impact">แนวคิด</a>
+        <a href="#download" class="btn">ทดลองใช้</a>
+      </div>
+    </nav>
+  </header>
 
-  <section id="problem" class="fade-up"><div class="container grid grid-2"><div><h2>ปัญหาที่เราแก้ไข</h2><p>ทุกวันนี้คนไทยหายใจอยู่กับฝุ่น PM 2.5 ตลอดเวลา — มลภาวะที่กระทบทุกมิติ ตั้งแต่เสี่ยงโรคระบบทางเดินหายใจและโรคเรื้อรัง รบกวนกิจกรรมประจำวันและการเดินทาง ไปจนถึงสร้างความเครียดเรื่องความปลอดภัยของอากาศ ยิ่งไปกว่านั้น กฎหมายปัจจุบันยังบังคับใช้ไม่ทั่วถึง กระจัดกระจาย และช่องทางร้องเรียนซับซ้อน จึงถึงเวลาให้ <strong>EnviLawLink</strong> เข้ามาเป็นเครื่องมือดิจิทัลที่ “ให้ข้อมูล – ให้สิทธิ – ให้ส่วนร่วม” โดยสรุปสิทธิด้านสิ่งแวดล้อมและกฎหมายให้เข้าใจง่าย แสดงแผนที่ค่าฝุ่น PM 2.5 และจุดเผาไหม้เรียลไทม์ รวมระบบร้องเรียน – ติดตามผลไว้ในแอปเดียว และเปิดให้ประชาชนลงชื่อสนับสนุนร่าง พ.ร.บ.อากาศสะอาด เพื่อผลักดันการแก้ปัญหาถึงรัฐสภาอย่างเป็นรูปธรรม</p></div><div class="feature-img"><img src="asset/pm25-kualalumpur-1000x667.jpg" alt="อินโฟกราฟิกปัญหาฝุ่น PM2.5"></div></div></section>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="content fade-up">
+      <h1><span class="brand">EnviLawLink</span> ลดฝุ่น PM 2.5 ไม่ลดสิทธิของคุณ</h1>
+      <p>แอปพลิเคชันที่เชื่อมข้อมูลสิ่งแวดล้อมกับกฎหมาย ให้ประชาชนมีส่วนร่วมแก้ปัญหาอากาศสะอาดอย่างมีพลัง</p>
+      <a href="#download" class="btn">ดาวน์โหลดเวอร์ชันต้นแบบ</a>
+    </div>
+  </section>
 
-  <section id="features" class="fade-up"><div class="container"><h2>ฟีเจอร์หลัก</h2><div class="grid grid-3">
-      <div class="feature fade-up"><div class="feature-img"><img src="asset/Law.png" alt="สิทธิและกฎหมาย"></div><h3>สิทธิ &amp; กฎหมาย</h3><p>สรุปกฎหมายและสิทธิด้านสิ่งแวดล้อมด้วยภาษาง่าย ๆ พร้อมแนวทางปกป้องสิทธิของตัวเอง</p></div>
-      <div class="feature fade-up"><div class="feature-img"><img src="asset/Realtime.png" alt="แผนที่คุณภาพอากาศ"></div><h3>ติดตามปริมาณฝุ่นเรียลไทม์</h3><p>แผนที่คุณภาพอากาศและจุดความร้อนแบบเรียลไทม์ เพื่อการตัดสินใจและป้องกันสุขภาพ</p></div>
-      <div class="feature fade-up"><div class="feature-img"><img src="asset/complain.png" alt="ร้องเรียนและติดตาม"></div><h3>ร้องเรียน &amp; ติดตาม</h3><p>แจ้งปัญหา ร้องเรียน และติดตามสถานะการดำเนินการได้ในที่เดียว</p></div>
-      <div class="feature fade-up"><div class="feature-img"><img src="asset/parliament.png" alt="ลงชื่อสนับสนุน"></div><h3>ลงชื่อสนับสนุนกฎหมาย</h3><p>ร่วมลงชื่อผลักดัน <q>พ.ร.บ. อากาศสะอาด</q> รวมพลังเสียงประชาชนสู่รัฐสภา</p></div></div></div></section>
+  <!-- Problem -->
+  <section id="problem" class="fade-up">
+    <div class="container grid grid-2">
+      <div>
+        <h2>ปัญหาที่เราแก้ไข</h2>
+        <p>
+          ทุกวันนี้คนไทยหายใจอยู่กับฝุ่น PM 2.5 ตลอดเวลา — มลภาวะที่กระทบทุกมิติ
+          ตั้งแต่เสี่ยงโรคระบบทางเดินหายใจและโรคเรื้อรัง รบกวนกิจกรรมประจำวันและการเดินทาง
+          ไปจนถึงสร้างความเครียดเรื่องความปลอดภัยของอากาศ ยิ่งไปกว่านั้น
+          กฎหมายปัจจุบันยังบังคับใช้ไม่ทั่วถึง กระจัดกระจาย และช่องทางร้องเรียนซับซ้อน
+          จึงถึงเวลาให้ <strong>EnviLawLink</strong> เข้ามาเป็นเครื่องมือดิจิทัลที่
+          “ให้ข้อมูล – ให้สิทธิ – ให้ส่วนร่วม” โดยสรุปสิทธิด้านสิ่งแวดล้อมและกฎหมายให้เข้าใจง่าย
+          แสดงแผนที่ค่าฝุ่น PM 2.5 และจุดเผาไหม้เรียลไทม์ รวมระบบร้องเรียน – ติดตามผลไว้ในแอปเดียว
+          และเปิดให้ประชาชนลงชื่อสนับสนุนร่าง พ.ร.บ.อากาศสะอาด
+          เพื่อผลักดันการแก้ปัญหาถึงรัฐสภาอย่างเป็นรูปธรรม
+        </p>
+      </div>
+      <div class="feature-img">
+        <img src="asset/pm25-kualalumpur-1000x667.jpg" alt="อินโฟกราฟิกปัญหาฝุ่น PM2.5">
+      </div>
+    </div>
+  </section>
 
-  <section id="video" class="fade-up"><div class="container"><h2>ชมวิดีโอสาธิต</h2><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="EnviLawLink Demo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></section>
+  <!-- Features -->
+  <section id="features" class="fade-up">
+    <div class="container">
+      <h2>ฟีเจอร์หลัก</h2>
+      <div class="grid grid-3">
 
+        <div class="feature fade-up">
+          <div class="feature-img"><img src="asset/Law.png" alt="สิทธิและกฎหมาย"></div>
+          <h3>สิทธิ &amp; กฎหมาย</h3>
+          <p>สรุปกฎหมายและสิทธิด้านสิ่งแวดล้อมด้วยภาษาง่าย ๆ พร้อมแนวทางปกป้องสิทธิของตัวเอง</p>
+        </div>
 
-  <!-- ---------- Impact ---------- -->
-  <section id="impact">
+        <div class="feature fade-up">
+          <div class="feature-img"><img src="asset/Realtime.png" alt="แผนที่คุณภาพอากาศ"></div>
+          <h3>ติดตามปริมาณฝุ่นเรียลไทม์</h3>
+          <p>แผนที่คุณภาพอากาศและจุดความร้อนแบบเรียลไทม์ เพื่อการตัดสินใจและป้องกันสุขภาพ</p>
+        </div>
+
+        <div class="feature fade-up">
+          <div class="feature-img"><img src="asset/complain.png" alt="ร้องเรียนและติดตาม"></div>
+          <h3>ร้องเรียน &amp; ติดตาม</h3>
+          <p>แจ้งปัญหา ร้องเรียน และติดตามสถานะการดำเนินการได้ในที่เดียว</p>
+        </div>
+
+        <div class="feature fade-up">
+          <div class="feature-img"><img src="asset/parliament.png" alt="ลงชื่อสนับสนุน"></div>
+          <h3>ลงชื่อสนับสนุนกฎหมาย</h3>
+          <p>ร่วมลงชื่อผลักดัน <q>พ.ร.บ. อากาศสะอาด</q> รวมพลังเสียงประชาชนสู่รัฐสภา</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section id="video" class="fade-up">
+    <div class="container">
+      <h2>ชมวิดีโอสาธิต</h2>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="EnviLawLink Demo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact (ย่อส่วนเพื่อความสั้น) -->
+  <section id="impact" class="fade-up">
     <div class="container grid grid-2">
       <div class="img-box">ใส่ภาพ Mockup แอป</div>
       <div>
@@ -58,20 +187,8 @@
     </div>
   </section>
 
-  <!-- ---------- Gallery ---------- -->
-  <section id="gallery">
-    <div class="container">
-      <h2>ภาพประกอบ</h2>
-      <div class="grid grid-3">
-        <div class="img-box">ภาพ #1</div>
-        <div class="img-box">ภาพ #2</div>
-        <div class="img-box">ภาพ #3</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- Download ---------- -->
-  <section id="download">
+  <!-- Download -->
+  <section id="download" class="fade-up">
     <div class="container" style="text-align:center;">
       <h2>พร้อมทดลองใช้?</h2>
       <p>ดาวน์โหลดต้นแบบแอป EnviLawLink และร่วมสร้างสังคมอากาศสะอาดไปกับเรา</p>
@@ -79,11 +196,25 @@
     </div>
   </section>
 
-  <!-- ---------- Footer ---------- -->
+  <!-- Footer -->
   <footer>
-    <div class="container">
-      <small>© 2025 EnviLawLink Team — พัฒนาเพื่ออนาคตอากาศสะอาดของไทย</small>
+    <div class="container fade-up">
+      <small>© 2025 EnviLawLink Team — พัฒนาเพื่ออนาคตอากาศสะอาดของไทย</small>
     </div>
   </footer>
+
+  <!-- ---------- Fade‑up Script ---------- -->
+  <script>
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target); // หยุดสังเกตเพื่อประหยัดทรัพยากร
+        }
+      });
+    },{threshold:0.15});
+
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+  </script>
 </body>
 </html>
