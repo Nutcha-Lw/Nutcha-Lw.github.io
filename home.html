@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
+    :root{
       --green-dark:#2f855a;
       --green:#4ade80;
       --sand:#f7fafc;
@@ -18,21 +18,20 @@
     /* ---------- Base ---------- */
     *{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif;line-height:1.6;color:var(--stone);}
     body{background:var(--sand);overflow-x:hidden;}
-    a{text-decoration:none;transition:all .25s ease;}
-    a:hover{opacity:.85;}
+    a{text-decoration:none;transition:.25s;} a:hover{opacity:.85;}
     img{width:100%;height:auto;border-radius:.75rem;}
-    .container{width:min(1200px,90%);margin-inline:auto;padding-block:4rem;}
+    .container{width:min(1200px,90%);margin:auto;padding-block:4rem;}
     .grid{display:grid;gap:2rem;}
     .grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
     .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
 
-    /* ---------- Buttons ---------- */
-    .btn{display:inline-block;background:var(--green-dark);color:#fff;padding:.75rem 2rem;border-radius:9999px;font-weight:600;letter-spacing:.3px;}
+    /* ---------- Button ---------- */
+    .btn{display:inline-block;background:var(--green-dark);color:#fff;padding:.75rem 2rem;border-radius:9999px;font-weight:600;}
     .btn:hover{background:var(--green);}
 
     /* ---------- Header ---------- */
     header{background:var(--green-dark);}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;max-width:1200px;margin-inline:auto;}
+    nav{max-width:1200px;margin:auto;padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;}
     .logo{font-size:1.6rem;font-weight:700;color:#fff;}
     .nav-links{display:flex;gap:1rem;}
     .nav-links a{padding:.5rem 1rem;color:#ffffffcc;border-radius:9999px;}
@@ -46,38 +45,36 @@
       position:relative;padding:4rem 1rem;isolation:isolate;
     }
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45);z-index:-1;}
-    .hero h1{font-size:clamp(2.2rem,6vw,4rem);color:#fff;margin-bottom:1.25rem;font-weight:600;line-height:1.25;}
+    .hero h1{font-size:clamp(2.2rem,6vw,4rem);color:#fff;margin-bottom:1.25rem;font-weight:600;}
     .brand{color:var(--green);font-weight:700;text-shadow:0 2px 4px rgba(0,0,0,.15);}
-    .hero p{color:#e0f2f1;max-width:640px;margin-inline:auto;margin-bottom:2.5rem;}
+    .hero p{color:#e0f2f1;max-width:640px;margin:auto;margin-bottom:2.5rem;}
 
     /* ---------- Sections ---------- */
     section{padding-block:6rem;}
-    section h2{font-size:2.2rem;color:var(--green-dark);margin-bottom:1rem;text-align:center;}
+    section h2{text-align:center;font-size:2.2rem;color:var(--green-dark);margin-bottom:1rem;}
 
-    /* ---------- Lists ---------- */
-    .problem-list,.solution-list{margin-block:1rem 1.5rem;padding-left:1.2rem;}
-    .problem-list li,.solution-list li{margin-bottom:.5rem;}
-
-    /* ---------- Feature Cards ---------- */
+    /* ---------- Feature Card ---------- */
     .feature{
-      background:#fff;border-radius:1rem;padding:2rem;
-      box-shadow:0 4px 12px rgba(0,0,0,.05);
-      transition:transform .25s,box-shadow .25s;cursor:pointer;
-      display:flex;flex-direction:column;align-items:center;text-align:center;
+      background:#fff;border-radius:1rem;padding:2rem;box-shadow:0 4px 12px rgba(0,0,0,.05);
+      transition:.25s;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-align:center;
     }
     .feature:hover{transform:translateY(-6px);box-shadow:0 6px 20px rgba(0,0,0,.1);}
     .feature-img{margin-bottom:1.25rem;border-radius:.75rem;overflow:hidden;width:100%;}
 
     /* ---------- Video ---------- */
     .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.08);}
-    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+    .video-wrapper iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
+    /* ---------- Carousel ---------- */
+    .carousel{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:.75rem;box-shadow:0 4px 12px rgba(0,0,0,.08);}
+    .carousel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:.8s;}
+    .carousel img.active{opacity:1;}
 
     /* ---------- Footer ---------- */
-    footer{background:var(--green-dark);color:#fff;text-align:center;padding:2.5rem 0;}
-    footer small{opacity:.85;}
+    footer{background:var(--green-dark);color:#fff;text-align:center;padding:2.5rem 0;} footer small{opacity:.85;}
 
-    /* ---------- Fade‑up Animation ---------- */
-    .fade-up{opacity:0;transform:translateY(40px);transition:opacity .8s ease-out,transform .8s ease-out;}
+    /* ---------- Fade‑up ---------- */
+    .fade-up{opacity:0;transform:translateY(40px);transition:.8s;}
     .fade-up.in-view{opacity:1;transform:translateY(0);}
   </style>
 </head>
@@ -138,7 +135,7 @@
         <div class="feature fade-up">
           <div class="feature-img"><img src="asset/Law.png" alt="สิทธิและกฎหมาย"></div>
           <h3>สิทธิ &amp; กฎหมาย</h3>
-          <p>สรุปกฎหมายและสิทธิด้านสิ่งแวดล้อมด้วยภาษาง่าย ๆ พร้อมแนวทางปกป้องสิทธิของตัวเอง</p>
+          <p>สรุปกฎหมายและสิทธิด้านสิ่งแวดล้อมด้วยภาษาง่าย ๆ พร้อมแนวทางปกป้องสิทธิของตัวเอง</p>
         </div>
 
         <div class="feature fade-up">
@@ -168,15 +165,19 @@
     <div class="container">
       <h2>ชมวิดีโอสาธิต</h2>
       <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="EnviLawLink Demo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="EnviLawLink Demo Video" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
-  <!-- Impact (ย่อส่วนเพื่อความสั้น) -->
+  <!-- Impact with carousel -->
   <section id="impact" class="fade-up">
     <div class="container grid grid-2">
-      <div class="img-box">ใส่ภาพ Mockup แอป</div>
+      <div class="carousel" id="mockCarousel">
+        <img src="asset/p1.jpg" class="active" alt="Mockup 1">
+        <img src="asset/p2.jpg" alt="Mockup 2">
+        <img src="asset/p3.jpg" alt="Mockup 3">
+      </div>
       <div>
         <h2>กฎหมายมีชีวิต &amp; Tech for Good</h2>
         <p><strong>“กฎหมายคือเครื่องมือ”</strong> สร้างการเปลี่ยนแปลงผ่านเทคโนโลยี<br>
@@ -192,7 +193,7 @@
     <div class="container" style="text-align:center;">
       <h2>พร้อมทดลองใช้?</h2>
       <p>ดาวน์โหลดต้นแบบแอป EnviLawLink และร่วมสร้างสังคมอากาศสะอาดไปกับเรา</p>
-      <a href="#" class="btn">ดาวน์โหลด (เร็ว ๆ นี้)</a>
+      <a href="#" class="btn">ดาวน์โหลด (เร็ว ๆ นี้)</a>
     </div>
   </section>
 
@@ -203,18 +204,27 @@
     </div>
   </footer>
 
-  <!-- ---------- Fade‑up Script ---------- -->
+  <!-- ---------- Scripts ---------- -->
   <script>
+    /* Fade‑up */
     const observer = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
           entry.target.classList.add('in-view');
-          observer.unobserve(entry.target); // หยุดสังเกตเพื่อประหยัดทรัพยากร
+          observer.unobserve(entry.target);
         }
       });
     },{threshold:0.15});
-
     document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+    /* Carousel */
+    const slides = document.querySelectorAll('#mockCarousel img');
+    let idx=0;
+    setInterval(()=>{
+      slides[idx].classList.remove('active');
+      idx = (idx+1)%slides.length;
+      slides[idx].classList.add('active');
+    },4000);
   </script>
 </body>
 </html>
